@@ -1,10 +1,10 @@
-export default function HomeUI({todos, dispatch, setNewTodo, newTodo}){
+export default function TodoUI({todos, dispatch, setNewTodo, newTodo}){
     return(<>
         <div className="container my-5">
-            <h2 className="text-center text-uppercase">Todo List</h2>
+            <h2 className="text-uppercase">Todo List</h2>
             <hr />
-            <div className="my-5">
-                <form onSubmit={(event) => event.preventDefault()}>
+            <div className="my-4">
+                <form className="shadow p-3" onSubmit={(event) => event.preventDefault()}>
                     <div className="form-group d-flex gap-2">
                         <input 
                             type="text" 

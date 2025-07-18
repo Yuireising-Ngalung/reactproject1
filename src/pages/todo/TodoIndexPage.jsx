@@ -1,13 +1,13 @@
 import { useReducer, useState } from "react";
-import HomeUI from "./HomeUI";
+import TodoUI from "./TodoUI";
 import { initialValues, reducer } from "./todo.action";
 
-export default function HomeIndexPage(){
+export default function TodoIndexPage(){
     const [newTodo, setNewTodo] = useState('');
 
     const [todos, dispatch] = useReducer(reducer, initialValues);
     return(<>
-        <HomeUI 
+        <TodoUI 
             todos = {todos} 
             dispatch = {dispatch} 
             newTodo={newTodo}
