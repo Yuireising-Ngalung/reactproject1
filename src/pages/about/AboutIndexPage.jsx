@@ -1,5 +1,8 @@
 export default function AboutIndexPage(){
     return(<>
-        <h1>ABOUT Page</h1>
+        <div className="container my-5">
+            <h1>ABOUT PAGE</h1>
+            <hr />
+        </div>
     </>)
 }

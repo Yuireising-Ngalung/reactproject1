@@ -19,7 +19,7 @@ export default function HomeUI({todos, dispatch, setNewTodo, newTodo}){
                             type="submit" 
                             onClick={()=>{
                                 if (newTodo.trim() === "") return;
-                                dispatch({type:'add', todo:newTodo});
+                                dispatch({type:'add', title:newTodo});
                                 setNewTodo('');
                             }
                             }>ADD</button>
@@ -30,9 +30,10 @@ export default function HomeUI({todos, dispatch, setNewTodo, newTodo}){
                 <div className="my-3 d-flex flex-column gap-2 align-items-center">
                     {
                         todos && todos.map((todo, index)=> {
+                            const {title} = todo;
                             return(
                                 <div key={index} className="item w-75  d-flex justify-content-between gap-2 bg-light p-2">
-                                    <p className="fw-bold">{todo}</p>
+                                    <p className="fw-bold">{title}</p>
                                     <div>
                                         <button className="btn btn-danger" onClick={() => dispatch({type:'delete', id: index})}>乂</button>
                                     </div>
