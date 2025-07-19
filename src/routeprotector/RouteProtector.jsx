@@ -1,9 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function RouteProtector({children}){
-    const navigate = useNavigate()
+    const {isAuthenticated} = useAuth();
 
-    return(
-        children
-    )
+    if(!isAuthenticated) {
+        return(<Navigate to='/login' />)
+    }
+
+    return children;
 }

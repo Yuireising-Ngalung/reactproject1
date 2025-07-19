@@ -29,7 +29,7 @@ export default function ProductDetailsPage(){
             </div>
             <hr />
             <div className="mt-3 text-center">
-                <Link to='/product'><button className="btn btn-primary">Back</button></Link>
+                <Link to='/dashboard'><button className="btn btn-primary">Back</button></Link>
             </div>
         </div>
     </>)

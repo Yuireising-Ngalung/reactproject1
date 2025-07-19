@@ -9,6 +9,7 @@ import ProductDetailsPage from '../pages/products/ProductDetailsPage';
 import PageNotFound from '../pages/nopage/PageNotFound';
 import DashboardIndexPage from "../pages/dashboard/DashboardIndexPage";
 import LoginIndexPage from "../pages/login/LoginIndexPage";
+import RouteProtector from "../routeprotector/RouteProtector";
 
 export default function PageRouter(){
     return(
@@ -18,10 +19,26 @@ export default function PageRouter(){
                 <Route index element = {<TodoIndexPage />} />
                 <Route path='about' element = {<AboutIndexPage />} />
                 <Route path='contact' element = {<ContactIndexPage />} />
-                <Route path='product' element = {<ProductsIndexPage />} />
-                <Route path='product/:id' element={<ProductDetailsPage />} />
+                <Route path='product' element = {
+                    <RouteProtector>
+                        <ProductsIndexPage />
+                    </RouteProtector>
+                    }
+                 />
+                <Route path='product/:id' element={
+                    <RouteProtector>
+                        <ProductDetailsPage />
+                    </RouteProtector> 
+                    } 
+                />
                 <Route path='*' element={<PageNotFound />} />
-                <Route path="dashboard" element = {<DashboardIndexPage />} />
+                <Route path="dashboard" element = {
+                    <RouteProtector>
+                        <DashboardIndexPage />
+                    </RouteProtector>
+                    } 
+                />
+                
                 <Route path="login" element={<LoginIndexPage />} />
             </Routes>
             <Footer />
